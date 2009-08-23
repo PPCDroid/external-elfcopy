@@ -43,6 +43,11 @@ LOCAL_CFLAGS += -DARCH_MIPS
 LOCAL_CFLAGS +=
 endif
 
+ifeq ($(TARGET_ARCH), ppc)
+LOCAL_CFLAGS += -DARCH_PPC
+LOCAL_CFLAGS +=
+endif
+
 # dwarf.c
 LOCAL_CFLAGS += -DATTRIBUTE_UNUSED="__attribute__((unused))"
 LOCAL_CFLAGS += -DTRUE=1

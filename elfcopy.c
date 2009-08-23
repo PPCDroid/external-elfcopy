@@ -1520,8 +1520,11 @@ static void update_relocations_section_offsets(Elf *newelf __attribute((unused))
 #elif defined(ARCH_MIPS)
 	    if (GELF_R_TYPE(rel_mem.r_info) == R_MIPS_NONE)
 		    continue;
+#elif defined(ARCH_PPC)
+	    if (GELF_R_TYPE(rel_mem.r_info) == R_PPC_NONE)
+		    continue;
 #else
-#error elfcopy only supported for MIPS and ARM architectures
+#error elfcopy is not supported on this architecture
 #endif
 
             range_t *old_range = find_range(old_section_ranges,
